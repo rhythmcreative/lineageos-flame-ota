@@ -9,20 +9,23 @@ mediante la propiedad de sistema `lineage.updater.uri`, fijada en
 `device/google/coral/flame/device.mk`:
 
 ```
-lineage.updater.uri=https://raw.githubusercontent.com/rhythmcreative/lineageos-flame-ota/main/api/v1/{device}/{type}.json
+lineage.updater.uri=https://raw.githubusercontent.com/rhythmcreative/lineageos-flame-ota/main/{device}.json
 ```
 
-Con `{device}=flame` y `{type}=unofficial`, la URL real que consulta el
-teléfono es:
+(La ruta se acortó respecto a la primera versión porque los valores de
+system property de Android tienen un límite duro de 91 bytes, y la ruta
+original `api/v1/{device}/{type}.json` se pasaba.)
+
+Con `{device}=flame`, la URL real que consulta el teléfono es:
 
 ```
-https://raw.githubusercontent.com/rhythmcreative/lineageos-flame-ota/main/api/v1/flame/unofficial.json
+https://raw.githubusercontent.com/rhythmcreative/lineageos-flame-ota/main/flame.json
 ```
 
 ## Estructura
 
 ```
-api/v1/flame/unofficial.json   # lista de builds disponibles (formato Updater API v1)
+flame.json   # lista de builds disponibles para flame (formato Updater API v1)
 ```
 
 Cada build es un objeto:
@@ -55,7 +58,7 @@ Desde la máquina de compilación, con el zip OTA firmado ya generado:
 ```
 
 Esto crea un GitHub Release con el zip adjunto y añade una entrada nueva al
-principio de `api/v1/flame/unofficial.json`, y empuja el cambio a `main`.
+principio de `flame.json`, y empuja el cambio a `main`.
 
 El teléfono verá la actualización la próxima vez que la app Updater
 compruebe (o al forzar "Comprobar actualizaciones" a mano). `raw.githubusercontent.com`
