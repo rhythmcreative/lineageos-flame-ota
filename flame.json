@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "datetime": 1786028797,
+    "type": "UNOFFICIAL",
+    "version": "23.2",
+    "files": [
+      {
+        "filename": "lineage-23.2-20260806-UNOFFICIAL-flame-signed.zip",
+        "sha256": "dbeb66284a7b3fe89809828f1f251447c49901d36f4e80d057c8f93bf9bc77dd",
+        "size": 1568012508,
+        "url": "https://github.com/rhythmcreative/lineageos-flame-ota/releases/download/flame-20260806/lineage-23.2-20260806-UNOFFICIAL-flame-signed.zip"
+      }
+    ]
+  }
+]
