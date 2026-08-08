@@ -1,65 +1,46 @@
-# lineageos-flame-ota
+<h1 align="center">LineageOS for Pixel 4</h1>
 
-Servidor de actualizaciones OTA "self-hosted" para mi build no oficial de
-LineageOS 23.2 (Android 16 / Baklava) para el Google Pixel 4 (`flame`).
+<div align="center">
 
-La app **Updater** de LineageOS incluida en el propio build apunta aquí en
-lugar de a `download.lineageos.org` (que no conoce builds no oficiales),
-mediante la propiedad de sistema `lineage.updater.uri`, fijada en
-`device/google/coral/flame/device.mk`:
+<p><i>OTA update support for the Google Pixel 4 (flame), providing the latest available LineageOS builds.</i></p>
 
-```
-lineage.updater.uri=https://raw.githubusercontent.com/rhythmcreative/lineageos-flame-ota/main/{device}.json
-```
+[![LineageOS](https://img.shields.io/badge/LineageOS-167C80?style=for-the-badge\&logo=lineageos\&logoColor=white)](https://lineageos.org/)
+[![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge\&logo=android\&logoColor=white)](https://www.android.com/)
+[![AOSP](https://img.shields.io/badge/AOSP-3DDC84?style=for-the-badge\&logo=android\&logoColor=white)](https://source.android.com/)
+[![OTA](https://img.shields.io/badge/OTA-Update-167C80?style=for-the-badge\&logo=android\&logoColor=white)](#)
+[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/)
 
-(La ruta se acortó respecto a la primera versión porque los valores de
-system property de Android tienen un límite duro de 91 bytes, y la ruta
-original `api/v1/{device}/{type}.json` se pasaba.)
+</div>
 
-Con `{device}=flame`, la URL real que consulta el teléfono es:
+## About
 
-```
-https://raw.githubusercontent.com/rhythmcreative/lineageos-flame-ota/main/flame.json
-```
+This repository contains the OTA metadata required to provide update information for the Google Pixel 4 (`flame`).
 
-## Estructura
+The repository is intentionally minimal and contains the update configuration used by the LineageOS updater.
 
-```
-flame.json   # lista de builds disponibles para flame (formato Updater API v1)
-```
+## Device
 
-Cada build es un objeto:
+| Property      | Value          |
+| ------------- | -------------- |
+| Device        | Google Pixel 4 |
+| Codename      | `flame`        |
+| ROM           | LineageOS      |
+| Update method | OTA            |
+| Architecture  | ARM64          |
 
-```json
-{
-  "datetime": 1754351999,
-  "type": "UNOFFICIAL",
-  "version": "23.2",
-  "files": [
-    {
-      "filename": "lineage-23.2-20260805-UNOFFICIAL-flame-signed.zip",
-      "sha256": "<sha256 del zip>",
-      "size": 1234567890,
-      "url": "https://github.com/rhythmcreative/lineageos-flame-ota/releases/download/<tag>/lineage-23.2-20260805-UNOFFICIAL-flame-signed.zip"
-    }
-  ]
-}
+## Repository Structure
+
+```text
+.
+└── flame.json
 ```
 
-El zip en sí **no** se sube al repo (límite de tamaño de git), se sube como
-adjunto de un GitHub Release y se enlaza desde el JSON.
+## OTA
 
-## Publicar un build nuevo
+The `flame.json` file contains the information required by the updater to detect and provide available OTA builds for the device.
 
-Desde la máquina de compilación, con el zip OTA firmado ya generado:
+> **Note:** This repository only provides OTA metadata. The actual LineageOS builds are hosted separately.
 
-```
-./build_lineage_flame.sh publish <ruta-al-zip-firmado>
-```
+## Disclaimer
 
-Esto crea un GitHub Release con el zip adjunto y añade una entrada nueva al
-principio de `flame.json`, y empuja el cambio a `main`.
-
-El teléfono verá la actualización la próxima vez que la app Updater
-compruebe (o al forzar "Comprobar actualizaciones" a mano). `raw.githubusercontent.com`
-cachea unos minutos, así que puede tardar un poco en reflejarse.
+This is an unofficial project and is not affiliated with or endorsed by the LineageOS project or Google.
