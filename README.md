@@ -6,9 +6,7 @@
 
 [![LineageOS](https://img.shields.io/badge/LineageOS-167C80?style=for-the-badge\&logo=lineageos\&logoColor=white)](https://lineageos.org/)
 [![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge\&logo=android\&logoColor=white)](https://www.android.com/)
-[![AOSP](https://img.shields.io/badge/AOSP-3DDC84?style=for-the-badge\&logo=android\&logoColor=white)](https://source.android.com/)
 [![OTA](https://img.shields.io/badge/OTA-Update-167C80?style=for-the-badge\&logo=android\&logoColor=white)](#)
-[![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/)
 [![Active](https://img.shields.io/badge/Status-Active-2EA44F?style=for-the-badge)](#)
 
 </div>
