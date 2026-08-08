@@ -43,3 +43,8 @@ The `flame.json` file contains the information required by the updater to detect
 ## Disclaimer
 
 This is an unofficial project and is not affiliated with or endorsed by the LineageOS project or Google.
+<div align="center">
+
+<p>Made with ❤️ from rhythmcreative.</p>
+
+</div>
