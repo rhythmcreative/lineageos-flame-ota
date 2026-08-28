@@ -1,13 +1,13 @@
 [
   {
-    "datetime": 1787923135,
+    "datetime": 1787930164,
     "type": "UNOFFICIAL",
     "version": "23.2",
     "files": [
       {
         "filename": "lineage-23.2-2026-08-28-UNOFFICIAL-flame-signed.zip",
-        "sha256": "8a82ba2b993a17df6c55f8e7719e5b9d9cda337ad705c4584a7c4b3b56578ee7",
-        "size": 1568340557,
+        "sha256": "9bdcac0fe9805e1dde62c7c0e3ca81e3ddc606cc13cb30976dd175e4eb37effc",
+        "size": 1568338273,
         "url": "https://github.com/rhythmcreative/lineageos-flame-ota/releases/download/flame-2026-08-28/lineage-23.2-2026-08-28-UNOFFICIAL-flame-signed.zip",
         "os_sdk_level": 36,
         "os_patch_level": "2026-08-01"
